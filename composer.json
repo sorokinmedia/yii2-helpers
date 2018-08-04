@@ -1,0 +1,36 @@
+{
+  "name": "sorokinmedia/yii2-helpers",
+  "description": "Helpers for Yii2",
+  "type": "yii2-extension",
+  "keywords": ["yii2", "yii 2", "helper", "plural", "date"],
+  "license": "BSD-3-Clause",
+  "authors": [
+    {
+      "name": "Ruslan Gilyazetdinov",
+      "email": "ma3obblu@gmail.com",
+      "homepage": "https://vk.com/ma3obblu"
+    }
+  ],
+  "support": {
+    "issues": "https://github.com/sorokinmedia/yii2-helpers/issues?state=open",
+    "source": "https://github.com/sorokinmedia/yii2-helpers"
+  },
+  "require": {
+    "yiisoft/yii2": ">=2.0.6",
+    "ext-intl": "*"
+  },
+  "require-dev": {
+    "phpunit/phpunit": "4.*"
+  },
+  "autoload": {
+    "psr-4": {
+      "sorokinmedia\\helpers\\": "src/"
+    }
+  },
+  "extra": {
+    "asset-installer-paths": {
+      "npm-asset-library": "vendor/npm",
+      "bower-asset-library": "vendor/bower"
+    }
+  }
+}
