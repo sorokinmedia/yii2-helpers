@@ -11,12 +11,14 @@ use yii\helpers\ArrayHelper;
  */
 class DateHelper
 {
-    const TIME_ONE_MINUTE = 60;
-    const TIME_ONE_HOUR = 3600;
-    const TIME_12 = 43200;
-    const TIME_24 = 86400;
-    const TIME_DAY_15 = 1296000;
-    const TIME_YEAR = 31536000;
+    const TIME_SECOND_ONE = 1;
+    const TIME_MINUTE_ONE = self::TIME_SECOND_ONE * 60;
+    const TIME_HOUR_ONE = self::TIME_MINUTE_ONE * 60;
+    const TIME_HOUR_TWELVE = self::TIME_HOUR_ONE * 12;
+    const TIME_DAY_ONE = self::TIME_HOUR_ONE * 24;
+    const TIME_DAY_FIFTEEN = self::TIME_DAY_ONE * 15;
+    const TIME_DAY_THIRTY = self::TIME_DAY_ONE * 30;
+    const TIME_YEAR_ONE = self::TIME_DAY_ONE * 365;
     const WEEKEND_DAYS = [5,6,7];
 
     /**
@@ -86,10 +88,10 @@ class DateHelper
      */
     public static function getLeftTime(int $time = null)
     {
-        $days = floor($time/self::TIME_24);
-        $hours = floor(($time - ($days*self::TIME_24))/self::TIME_ONE_HOUR);
-        $sec = $time - ($hours * self::TIME_ONE_HOUR3600);
-        $mins = floor($sec/self::TIME_ONE_MINUTE);
+        $days = floor($time/self::TIME_DAY_ONE);
+        $hours = floor(($time - ($days*self::TIME_DAY_ONE))/self::TIME_HOUR_ONE);
+        $sec = $time - ($hours * self::TIME_HOUR_ONE);
+        $mins = floor($sec/self::TIME_MINUTE_ONE);
         if ($days > 0) {
             $time_interval = $days . ' ' . PluralHelper::convert($days, 'days') . ' и ' . $hours . ' ' . PluralHelper::convert($hours, 'hours');
         } elseif ($hours > 0) {
