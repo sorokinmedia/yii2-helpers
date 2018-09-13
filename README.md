@@ -7,13 +7,13 @@ Sorokin.Media repository
 Компонент содержит несколько хелперов, которые могут быть использованы в проектах.
 
 ***
-###ArrayHelper
-####список методов
+### ArrayHelper
+#### список методов
 + `public static function convertArrayToArrayOfObject(array $array) : array {}` - конвертирует массив key=>value в массив объектов {'id', 'name'}
 
 ***
-###DateHelper
-####список констант
+### DateHelper
+#### список констант
 + `const TIME_SECOND_ONE`  - одна секунда
 + `const TIME_MINUTE_ONE` - одна минута
 + `const TIME_HOUR_ONE` - один час
@@ -24,7 +24,7 @@ Sorokin.Media repository
 + `const TIME_YEAR_ONE` - один год
 + `const WEEKEND_DAYS` - массив выходных дней
 
-####список методов
+#### список методов
 + `public static function getExtendTime(int $extend_time) : int` - получает кол-во часов, учитывая выходные
 + `public static function getListOfTimezones(string $locale = '') : array` - список временных зон
 + `public static function getLeftTime(int $time = null)` - трансформирует секунды(unixstamp) в текст (1 час 20 минут)
@@ -34,8 +34,8 @@ Sorokin.Media repository
 + `public static function getStartEndPrevMonth() : array` - первый и последний день прошлого месяца
 
 ***
-###PluralHelper
-####список методов
+### PluralHelper
+#### список методов
 + `public static function convert(int $n, string $type = "hours") : string` - конвертирует число в слово в нужной словоформе. доступные варианты:
     + `days` - дни
     + `hours` - часы
@@ -48,8 +48,8 @@ Sorokin.Media repository
     + `rubl` - рубли
     
 ***
-###TextHelper
-####список методов
+### TextHelper
+#### список методов
 + `public static function translitString(string $string) : string` - транслитерация строки
 + `public static function autop( $pee, $br = true )` - обертка из Worpdress в теги p,br и т.д.
 + `public static function checkCardNumber(string $str) : bool` - проверка номера карты по методу Луна
