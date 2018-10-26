@@ -62,3 +62,17 @@ Sorokin.Media repository
 + `public static function filterResponse(string $response) : string` - конвертирует JSON ответ в строку (для тестов API)
 + `public static function makeUrls(string $text) : string` - автоматическая простановка тегов ссылок в тексте
 + `public static function removeNbsp(string $text) : string` - очистка текста от непрерывных пробелов (nbsp)
+
+***
+### TestHelper
+#### список методов
++ `public static function filterResponse(string $response) : string` - приводит API ответ к нужному виду. для тестов API
+
+***
+### StatsHelper
+#### список методов
++ `public static function makeInt(array $array) : array` - приводит значение массива к целым числам (int)
++ `public static function makeFloat(array $array) : array` - приводит значения массива к дробным числам (float)
++ `public static function makeRound(array $array) : array` - округляет все значения массива до 2 знаков после запятой
++ `public static function makeMinutes(array $array) : array` - минуты из секунд
++ `public static function date_range(string $from, string $to, string $step = '+1 day', string $output_format = 'd-m-Y' ) : array` - формирует массив дат заданного интервала
