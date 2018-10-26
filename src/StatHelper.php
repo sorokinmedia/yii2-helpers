@@ -2,10 +2,10 @@
 namespace sorokinmedia\helpers;
 
 /**
- * Class StatsHelper
+ * Class StatHelper
  * @package sorokinmedia\helpers
  */
-class StatsHelper
+class StatHelper
 {
     /**
      * приводит значение массива к целым числам (int)
