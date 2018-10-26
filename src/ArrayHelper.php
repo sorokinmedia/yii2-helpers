@@ -12,14 +12,20 @@ class ArrayHelper
     /**
      * конвертит массив key=>value в массив объектов {'id', 'name'}
      * @param array $array
+     * @param string $type
      * @return array
      */
-    public static function convertArrayToArrayOfObject(array $array) : array
+    public static function convertArrayToArrayOfObject(array $array, string $type = 'string') : array
     {
         $extended_array = [];
         foreach ($array as $key => $value){
+            switch ($type){
+                case 'int': $key = (int) $key; break;
+                case 'float': $key = (float) $key; break;
+                default: $key = (string) $key; break;
+            }
             $extended_array[] = [
-                'id' => $key,
+                'id' => (int) $key,
                 'name' => $value,
             ];
         }
