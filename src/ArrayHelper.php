@@ -25,4 +25,13 @@ class ArrayHelper
         }
         return $extended_array;
     }
+
+    /**
+     * формирует список временных интервалов для выбора в зарплатном модуле
+     * @return array
+     */
+    public static function costHourValues() : array
+    {
+        return ['0.25' => 0.25] + array_combine(range(0.5,24,0.5),range(0.5,24,0.5));
+    }
 }

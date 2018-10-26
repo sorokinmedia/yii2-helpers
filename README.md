@@ -10,6 +10,7 @@ Sorokin.Media repository
 ### ArrayHelper
 #### список методов
 + `public static function convertArrayToArrayOfObject(array $array) : array {}` - конвертирует массив key=>value в массив объектов {'id', 'name'}
++ `public static function costHourValues() : array {}` -  формирует список временных интервалов для выбора в зарплатном модуле      
 
 ***
 ### DateHelper
