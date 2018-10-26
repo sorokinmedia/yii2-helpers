@@ -15,14 +15,15 @@ class ArrayHelper
      * @param string $type
      * @return array
      */
-    public static function convertArrayToArrayOfObject(array $array, string $type = 'string') : array
+    public static function convertArrayToArrayOfObject(array $array, string $type = 'int') : array
     {
         $extended_array = [];
         foreach ($array as $key => $value){
             switch ($type){
                 case 'int': $key = (int) $key; break;
                 case 'float': $key = (float) $key; break;
-                default: $key = (string) $key; break;
+                case 'string': $key = (string) $key; break;
+                default: break;
             }
             $extended_array[] = [
                 'id' => (int) $key,
