@@ -71,12 +71,12 @@ class StatHelper
      */
     public static function date_range(string $from, string $to, string $step = '+1 day', string $output_format = 'd-m-Y' ) : array
     {
-        $dates = array();
+        $dates = [];
         $date_from = strtotime($from);
         $date_to = strtotime($to);
         while($date_from <= $date_to){
             $dates[] = date($output_format, $date_from);
-            $date_to = strtotime($step, $date_from);
+            $date_from = strtotime($step, $date_from);
         }
         return $dates;
     }
