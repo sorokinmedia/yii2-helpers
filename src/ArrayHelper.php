@@ -26,7 +26,7 @@ class ArrayHelper
                 default: break;
             }
             $extended_array[] = [
-                'id' => (int) $key,
+                'id' => $key,
                 'name' => $value,
             ];
         }
