@@ -336,12 +336,7 @@ class TextHelper
             if(!array_key_exists($pattern, $usedPatterns)){
                 $usedPatterns[$pattern]=true;
                 // now try to catch last thing in text
-                $pattern2 = substr($pattern, -3);
-                if($pattern2 == "gif" || $pattern2 == "peg" || $pattern2 == "jpg" || $pattern2 == "png"){
-                    $text = str_replace($pattern, '<img src="'.$pattern.'">', $text);
-                } else {
-                    $text = str_replace($pattern, '<a href="'.$pattern.'" target="_blank">'.$pattern.'</a>', $text);
-                }
+                $text = str_replace($pattern, '<a href="'.$pattern.'" target="_blank">'.$pattern.'</a>', $text);
             }
         }
         return $text;
