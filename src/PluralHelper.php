@@ -10,6 +10,8 @@ namespace sorokinmedia\helpers;
 class PluralHelper
 {
     private static $_days = ['день', 'дня', 'дней'];
+    private static $_months = ['месяц', 'месяца', 'месяцев'];
+    private static $_years = ['год', 'года', 'лет'];
     private static $_minutes = ['минуту', 'минуты', 'минут'];
     private static $_seconds = ['секунду', 'секунды', 'секунд'];
     private static $_hours = ['час', 'часа', 'часов'];
@@ -25,12 +27,16 @@ class PluralHelper
      * @param string $type hours, days, minutes, seconds, rubl
      * @return string
      */
-    public static function convert(int $n, string $type = "hours") : string
+    public static function convert(int $n, string $type = 'hours') : string
     {
         $n = ceil($n);
         switch ($type) {
             case 'days':
                 return self::$_days[self::plural_type($n)];
+            case 'months':
+                return self::$_months[self::plural_type($n)];
+            case 'years':
+                return self::$_years[self::plural_type($n)];
             case 'hours':
                 return self::$_hours[self::plural_type($n)];
             case 'minutes':
