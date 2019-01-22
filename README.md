@@ -39,6 +39,8 @@ Sorokin.Media repository
 #### список методов
 + `public static function convert(int $n, string $type = "hours") : string` - конвертирует число в слово в нужной словоформе. доступные варианты:
     + `days` - дни
+    + `months` - месяцы
+    + `years` - годы 
     + `hours` - часы
     + `minutes` - минуты
     + `seconds` - секунды
