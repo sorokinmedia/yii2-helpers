@@ -1,5 +1,7 @@
 # yii2-helpers
 
+[![Total Downloads](https://img.shields.io/packagist/dt/sorokinmedia/yii2-helpers.svg)](https://packagist.org/packages/sorokinmedia/yii2-helpers)
+
 ***
 Sorokin.Media repository
 ***
