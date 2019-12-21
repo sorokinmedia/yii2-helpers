@@ -80,3 +80,31 @@ Sorokin.Media repository
 + `public static function makeRound(array $array) : array` - округляет все значения массива до 2 знаков после запятой
 + `public static function makeMinutes(array $array) : array` - минуты из секунд
 + `public static function date_range(string $from, string $to, string $step = '+1 day', string $output_format = 'd-m-Y' ) : array` - формирует массив дат заданного интервала
+
+***
+### CacheHelper
+###Работа с кешем
+
+Чтобы завернуть ответ в API в кеш необходимо сделать:
+
+- Определить уникальный ключ исходя из параметров запроса, например `"User.$user->id.new-messages"`
+
+- Перед вызовом основного функционала в апи методе добавить проверку наличия кеша:
+```
+$cache_key = "User.$user->id.new-messages";
+if (Yii::$app->cache->exists($cache_key)){
+    return new ApiAnswerLogFromCache(null, Yii::$app->cache->get($cache_key));
+}
+```
+
+- Перед отправкой ответа после основного функицонала метода добавлять ответ в кеш:
+```
+Yii::$app->cache->set($cache_key, $messages, CacheHelper::CACHE_TIME_FIVE_MINUTES);
+return new ApiAnswerLogInsertCache(null, $messages);
+```
+
+- Добавить метод очистки кеша по заданному ключу в `CacheHelper`
+
+- Добавить вызовы метода очистки кеша по коду, там где это требуется
+
+- Описать закешированный метод в локальном `readme.MD`
