@@ -1,4 +1,5 @@
 <?php
+
 namespace sorokinmedia\helpers;
 
 /**
@@ -12,11 +13,9 @@ class TestHelper
      * @param string $response
      * @return string
      */
-    public static function filterResponse(string $response) : string
+    public static function filterResponse(string $response): string
     {
-        $response = str_replace('{', '[', $response);
-        $response = str_replace('}', ']', $response);
-        $response = str_replace('":', '"=>', $response);
+        $response = str_replace(array('{', '}', '":'), array('[', ']', '"=>'), $response);
         return $response;
     }
 }

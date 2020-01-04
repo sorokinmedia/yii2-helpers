@@ -1,4 +1,5 @@
 <?php
+
 namespace sorokinmedia\helpers;
 
 use Yii;
@@ -27,7 +28,7 @@ class CacheHelper
      */
     public static function flushByKey(string $key): void
     {
-        if (Yii::$app->cache->exists($key)){
+        if (Yii::$app->cache->exists($key)) {
             Yii::$app->cache->delete($key);
         }
     }

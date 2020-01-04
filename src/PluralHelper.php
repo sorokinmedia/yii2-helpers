@@ -1,4 +1,5 @@
 <?php
+
 namespace sorokinmedia\helpers;
 
 /**
@@ -27,7 +28,7 @@ class PluralHelper
      * @param string $type hours, days, minutes, seconds, rubl
      * @return string
      */
-    public static function convert(int $n, string $type = 'hours') : string
+    public static function convert(int $n, string $type = 'hours'): string
     {
         $n = ceil($n);
         switch ($type) {
@@ -62,8 +63,8 @@ class PluralHelper
      * @param int $n
      * @return int
      */
-    public static function plural_type(int $n) : int
+    public static function plural_type(int $n): int
     {
-        return ($n%10==1 && $n%100!=11 ? 0 : ($n%10>=2 && $n%10<=4 && ($n%100<10 || $n%100>=20) ? 1 : 2));
+        return ($n % 10 === 1 && $n % 100 !== 11 ? 0 : ($n % 10 >= 2 && $n % 10 <= 4 && ($n % 100 < 10 || $n % 100 >= 20) ? 1 : 2));
     }
 }
