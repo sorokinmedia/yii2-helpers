@@ -15,8 +15,10 @@ class StatHelper
      */
     public static function makeInt(array $array): array
     {
-        foreach ($array as $key => $value) {
-            $array[$key] = (int)$value;
+        if (!empty($array)) {
+            foreach ($array as $key => $value) {
+                $array[$key] = (int)$value;
+            }
         }
         return $array;
     }
@@ -28,8 +30,10 @@ class StatHelper
      */
     public static function makeFloat(array $array): array
     {
-        foreach ($array as $key => $value) {
-            $array[$key] = (float)$value;
+        if (!empty($array)) {
+            foreach ($array as $key => $value) {
+                $array[$key] = (float)$value;
+            }
         }
         return $array;
     }
@@ -41,8 +45,10 @@ class StatHelper
      */
     public static function makeRound(array $array): array
     {
-        foreach ($array as $key => $value) {
-            $array[$key] = round($value, 2);
+        if (!empty($array)) {
+            foreach ($array as $key => $value) {
+                $array[$key] = round($value, 2);
+            }
         }
         return $array;
     }
